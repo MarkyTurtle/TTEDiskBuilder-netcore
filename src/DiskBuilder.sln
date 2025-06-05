@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskCompiler", "DiskCompiler\DiskCompiler.csproj", "{C28DD026-D54D-47FA-BE05-CB28050BC98C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskBuilder", "DiskBuilder\DiskBuilder.csproj", "{C28DD026-D54D-47FA-BE05-CB28050BC98C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
