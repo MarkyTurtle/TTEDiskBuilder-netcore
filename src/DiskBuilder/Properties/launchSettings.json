@@ -2,7 +2,7 @@
   "profiles": {
     "CreateCommand Disk1": {
       "commandName": "Project",
-      "commandLineArgs": "create --out c:\\temp\\testdisk --path .\\TestFiles\\Disk1\\ --config disk.json"
+      "commandLineArgs": "create --out testdisk.adf --path .\\TestFiles\\Disk1\\ --config disk.json"
     }
   }
 }

@@ -62,6 +62,10 @@ namespace DiskCompiler.Commands
                 {
                     folderPath = Environment.CurrentDirectory;
                 }
+                else
+                {
+                    folderPath = folderPath.Replace('\\', Path.DirectorySeparatorChar);
+                }
 
                 if (string.IsNullOrEmpty(configFileName))
                 {
