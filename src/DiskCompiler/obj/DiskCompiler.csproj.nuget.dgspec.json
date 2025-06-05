@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/mark/Documents/github/TTEDiskBuilder-netcore/src/DiskCompiler/DiskCompiler.csproj": {}
+  },
+  "projects": {
+    "/home/mark/Documents/github/TTEDiskBuilder-netcore/src/DiskCompiler/DiskCompiler.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mark/Documents/github/TTEDiskBuilder-netcore/src/DiskCompiler/DiskCompiler.csproj",
+        "projectName": "DiskCompiler",
+        "projectPath": "/home/mark/Documents/github/TTEDiskBuilder-netcore/src/DiskCompiler/DiskCompiler.csproj",
+        "packagesPath": "/home/mark/.nuget/packages/",
+        "outputPath": "/home/mark/Documents/github/TTEDiskBuilder-netcore/src/DiskCompiler/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mark/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.CommandLine": {
+              "target": "Package",
+              "version": "[2.0.0-beta4.22272.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.12, 8.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.12, 8.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.12, 8.0.12]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
