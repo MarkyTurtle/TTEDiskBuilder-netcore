@@ -8,19 +8,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="TestFiles\Disk1\bootblock" />
-    <None Remove="TestFiles\Disk1\bootblock.bin" />
     <None Remove="TestFiles\Disk1\disk.json" />
+    <None Remove="TestFiles\Disk1\flight.mod" />
+    <None Remove="TestFiles\Disk1\float.mod" />
+    <None Remove="TestFiles\Disk1\jarresque.mod" />
+    <None Remove="TestFiles\Disk1\stratospheric.mod" />
+    <None Remove="TestFiles\Disk1\thefly.mod" />
+    <None Remove="TestFiles\Disk1\titlepic.raw" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="TestFiles\Disk1\bootblock.bin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="TestFiles\Disk1\disk.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestFiles\Disk1\bootblock">
+    <Content Include="TestFiles\Disk1\flight.mod">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Disk1\float.mod">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Disk1\jarresque.mod">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Disk1\stratospheric.mod">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Disk1\thefly.mod">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Disk1\titlepic.raw">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

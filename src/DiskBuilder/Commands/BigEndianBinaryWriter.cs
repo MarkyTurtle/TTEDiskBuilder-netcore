@@ -25,7 +25,7 @@ namespace DiskCompiler.Commands
             }
             var trimmedText = text.Substring(0, length);
             var convertedText = Encoding.ASCII.GetBytes(trimmedText);
-            convertedText[length-1] = (byte)0;
+            // convertedText[length-1] = (byte)0;
             Write(convertedText);
         }
 

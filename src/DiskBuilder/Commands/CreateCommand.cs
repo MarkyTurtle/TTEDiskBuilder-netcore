@@ -84,15 +84,16 @@ namespace DiskCompiler.Commands
 
         private static void CreateHandler(string outFilename, string folderPath, string configFilename)
         {
-            var diskDefinition = GetDiskItemsFromJson(folderPath, configFilename);
-            LoadDiskItems(diskDefinition.DiskItems, folderPath);
-            byte[] diskData = MergeData(diskDefinition.DiskItems);
-            var disk = MakeDisk(diskDefinition.DiskItems, diskData, folderPath);
+            DiskDefinition diskDefinition = GetDiskDefinitionFromJson(folderPath, configFilename);
+            diskDefinition.LoadDiskItems(folderPath);
+            diskDefinition.MergeData();
+
+            var disk = MakeDisk(diskDefinition, folderPath);
 
             var diskOutFilepath = Path.Combine(folderPath, outFilename);
             File.WriteAllBytes(diskOutFilepath, disk);
 
-            var fileTable = GetDiskContents(diskDefinition.DiskItems);
+            var fileTable = GetDiskContents(diskDefinition);
             var fileTableName = Path.Combine(folderPath, outFilename + ".filetable.txt");
             File.WriteAllText(fileTableName, fileTable);
 
@@ -103,9 +104,9 @@ namespace DiskCompiler.Commands
 
 
 
-        private static string GetDiskContents(List<DiskItem> diskItems)
+        private static string GetDiskContents(DiskDefinition diskDefinition)
         {
-            var fileTableSize = diskItems.Count * 4 * 4;
+            var fileTableSize = (diskDefinition.DiskItems.Count + 1) * 4 * 4;       // First entry = disk number, hence + 1
             var offset = 0x400 + fileTableSize;
 
             var stringBuilder = new StringBuilder();
@@ -119,8 +120,18 @@ namespace DiskCompiler.Commands
             stringBuilder.Append("FileSize");           // file size
             stringBuilder.Append(Environment.NewLine);
 
+            // Write Disk Number Entry
+            stringBuilder.Append("dsk#");
+            stringBuilder.Append("\t");
+            stringBuilder.Append(diskDefinition.DiskNumber.ToString("X8"));
+            stringBuilder.Append("\t");
+            stringBuilder.Append(diskDefinition.DiskNumber.ToString("X8"));
+            stringBuilder.Append("\t");
+            stringBuilder.Append(diskDefinition.DiskNumber.ToString("X8"));
+            stringBuilder.Append(Environment.NewLine);
+
             // Create File Table in disk image
-            foreach (var diskItem in diskItems)
+            foreach (var diskItem in diskDefinition.DiskItems)
             {
                 stringBuilder.Append(diskItem.FileID);                  // file identifier (long)
                 stringBuilder.Append("\t");
@@ -132,9 +143,10 @@ namespace DiskCompiler.Commands
                 stringBuilder.Append(Environment.NewLine);
             }
 
-            var lastDiskItem = diskItems.Last();
+            // Create Free Space Entry
+            var lastDiskItem = diskDefinition.DiskItems.Last();
             var freespaceStart = lastDiskItem.DiskLocation + lastDiskItem.FileSize + offset;
-            var freespaceSize = 0xdc000 - freespaceStart; 
+            var freespaceSize = 0xdc000 - freespaceStart;
 
             // FreeSpace
             stringBuilder.Append("Free\t");
@@ -150,33 +162,34 @@ namespace DiskCompiler.Commands
 
 
 
-        private static byte[] MakeDisk(List<DiskItem> diskItems, byte[] diskData, string folderPath)
+        private static byte[] MakeDisk(DiskDefinition diskDefinition, string folderPath)
         {
-            var fileTableSize = diskItems.Count * 4 * 4;
+            var fileTableSize = (diskDefinition.DiskItems.Count + 1) * 4 * 4;       // First Entry = Disk Number, hence the + 1
             var offset = 0x400 + fileTableSize;
 
             using (var memoryStream = new MemoryStream())
             using (var writer = new BigEndianBinaryWriter(memoryStream))
             {
 
-                // Create BootBlock
-                var bootFilePath = Path.Combine(folderPath, "bootblock.bin");
-                if (!File.Exists(bootFilePath))
+                // Create BootBlock if exists
+                if (!string.IsNullOrEmpty(diskDefinition.BootBlock.FileName))
                 {
-                    throw new Exception("missing bootblock file");
+                    InsertBootBlockCheckSum(diskDefinition.BootBlock.FileData);
+                    writer.Write(diskDefinition.BootBlock.FileData);
                 }
-                byte[] bootBlock = File.ReadAllBytes(bootFilePath);
-                if (bootBlock.Length != 0x400)
+                else
                 {
-                    throw new Exception("bootblock incorrect size");
+                    writer.Write(new byte[0x400]);
                 }
 
-                InsertBootBlockCheckSum(bootBlock);
-                writer.Write(bootBlock);
+                // Create Disk Number entry in FileTable
+                writer.WriteAscii("dsk#", 4);
+                writer.WriteInt32(diskDefinition.DiskNumber);
+                writer.WriteInt32(diskDefinition.DiskNumber);
+                writer.WriteInt32(diskDefinition.DiskNumber);
 
-
-                // Create File Table in disk image
-                foreach (var diskItem in diskItems)
+                // Create FileTable Entries for Files
+                foreach (var diskItem in diskDefinition.DiskItems)
                 {
                     writer.WriteAscii(diskItem.FileID, 4);               // file identifier (long)
                     writer.WriteInt32(diskItem.DiskLocation + offset);   // start offset from start of disk
@@ -185,7 +198,7 @@ namespace DiskCompiler.Commands
                 }
 
                 // Write File Data
-                writer.Write(diskData);
+                writer.Write(diskDefinition.DiskData);
 
                 // Calc empty space
                 var spaceNeeded = 0xdc000 - writer.Position;
@@ -264,46 +277,8 @@ namespace DiskCompiler.Commands
 
 
 
-        private static byte[] MergeData(List<DiskItem> diskItems)
-        {
-            var bytePosition = 0;
-            using (var memoryStream = new MemoryStream())
-            using (var writer = new BigEndianBinaryWriter(memoryStream))
-            {
-                foreach (var diskItem in diskItems)
-                {
-                    diskItem.DiskLocation = bytePosition;
-                    writer.Write(diskItem.FileData);
-                    bytePosition += diskItem.FileSize;
-                }
-                return writer.ToArray();
-            }
 
-        }
-
-
-
-        private static void LoadDiskItems(List<DiskItem> diskItems, string folderPath)
-        {
-            foreach (var diskItem in diskItems)
-            {
-                LoadDiskItem(diskItem, folderPath);
-            }
-
-        }
-
-
-
-        private static void LoadDiskItem(DiskItem diskItem, string folderPath)
-        {
-            var sourceFile = Path.Combine(folderPath, diskItem.FileName);
-            diskItem.FileData = File.ReadAllBytes(sourceFile);
-            diskItem.FileSize = diskItem.FileData.Length;
-        }
-
-
-
-        private static DiskDefinition GetDiskItemsFromJson(string folderPath, string configFilename)
+        private static DiskDefinition GetDiskDefinitionFromJson(string folderPath, string configFilename)
         {
             var configFilePath = Path.Combine(folderPath, configFilename);
             string jsonConfig = File.ReadAllText(configFilePath);

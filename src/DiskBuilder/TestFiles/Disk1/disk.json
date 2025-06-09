@@ -1,11 +1,38 @@
 {
-  "bootBlock": "bootblock.bin",
+  "bootBlock": {
+    "FileName": ""
+  },
   "diskNumber": 1,
   "diskItems": [
-      {
-        "fileName": "bootblock",
-        "fileid": "boot",
-        "cacheable":  false
-      }
-    ]
+    {
+      "fileName": "titlepic.raw",
+      "fileid": "tpic",
+      "cacheable": false
+    },
+    {
+      "fileName": "flight.mod",
+      "fileid": "flig",
+      "cacheable": false
+    },
+    {
+      "fileName": "float.mod",
+      "fileid": "floa",
+      "cacheable": false
+    },
+    {
+      "fileName": "jarresque.mod",
+      "fileid": "jarr",
+      "cacheable": false
+    },
+    {
+      "fileName": "stratospheric.mod",
+      "fileid": "stra",
+      "cacheable": false
+    },
+    {
+      "fileName": "thefly.mod",
+      "fileid": "thef",
+      "cacheable": false
+    }
+  ]
 }
