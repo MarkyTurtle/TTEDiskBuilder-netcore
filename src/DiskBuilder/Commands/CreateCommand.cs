@@ -84,20 +84,20 @@ namespace DiskCompiler.Commands
 
         private static void CreateHandler(string outFilename, string folderPath, string configFilename)
         {
-            var diskBytes = new byte[0xdc000];
+            var diskDefinition = GetDiskItemsFromJson(folderPath, configFilename);
+            LoadDiskItems(diskDefinition.DiskItems, folderPath);
+            byte[] diskData = MergeData(diskDefinition.DiskItems);
+            var disk = MakeDisk(diskDefinition.DiskItems, diskData, folderPath);
 
-            var diskItems = GetDiskItemsFromJson(folderPath, configFilename);
-            LoadDiskItems(diskItems, folderPath);
-            byte[] diskData = MergeData(diskItems);
-            var disk = MakeDisk(diskItems, diskData, folderPath);
+            var diskOutFilepath = Path.Combine(folderPath, outFilename);
+            File.WriteAllBytes(diskOutFilepath, disk);
 
-            var outFilepath = Path.Combine(folderPath, outFilename);
-            File.WriteAllBytes(outFilepath, disk);
+            var fileTable = GetDiskContents(diskDefinition.DiskItems);
+            var fileTableName = Path.Combine(folderPath, outFilename + ".filetable.txt");
+            File.WriteAllText(fileTableName, fileTable);
 
-            var fileTable = GetDiskContents(diskItems);
-            File.WriteAllText(outFilepath + ".filetable.txt", fileTable);
-
-            Console.WriteLine(outFilename);
+            Console.WriteLine($"ADF Disk Image: {Path.GetFullPath(diskOutFilepath)}");
+            Console.WriteLine($"ADF File Table: {Path.GetFullPath(fileTableName)}");
 
         }
 
@@ -303,18 +303,18 @@ namespace DiskCompiler.Commands
 
 
 
-        private static List<DiskItem> GetDiskItemsFromJson(string folderPath, string configFilename)
+        private static DiskDefinition GetDiskItemsFromJson(string folderPath, string configFilename)
         {
             var configFilePath = Path.Combine(folderPath, configFilename);
             string jsonConfig = File.ReadAllText(configFilePath);
 
-            var diskItems = JsonConvert.DeserializeObject<List<DiskItem>>(jsonConfig);
-            if (diskItems == null || !diskItems.Any())
+            var diskDefinition = JsonConvert.DeserializeObject<DiskDefinition>(jsonConfig);
+            if (diskDefinition == null || diskDefinition.DiskItems == null || !diskDefinition.DiskItems.Any())
             {
-                throw new Exception($"{configFilename} contains no disk items.");
+                throw new Exception($"{configFilename} disk.json is empty or contains no disk items.");
             }
 
-            return diskItems;
+            return diskDefinition;
         }
 
 

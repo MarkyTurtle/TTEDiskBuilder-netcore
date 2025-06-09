@@ -1,8 +1,11 @@
-[
-  {
-    "fileName": "bootblock",
-    "fileid": "boot",
-    "cacheable":  false
-  }
-]
-
+{
+  "bootBlock": "bootblock.bin",
+  "diskNumber": 1,
+  "diskItems": [
+      {
+        "fileName": "bootblock",
+        "fileid": "boot",
+        "cacheable":  false
+      }
+    ]
+}
