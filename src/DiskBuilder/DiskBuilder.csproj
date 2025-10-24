@@ -15,6 +15,34 @@
     <None Remove="TestFiles\Disk1\stratospheric.mod" />
     <None Remove="TestFiles\Disk1\thefly.mod" />
     <None Remove="TestFiles\Disk1\titlepic.raw" />
+    <None Remove="TestFiles\infinitedreams\bladerunner.zx0" />
+    <None Remove="TestFiles\infinitedreams\bootblock.o" />
+    <None Remove="TestFiles\infinitedreams\Breakthrough.zx0" />
+    <None Remove="TestFiles\infinitedreams\bright.zx0" />
+    <None Remove="TestFiles\infinitedreams\cosmichowmuch.zx0" />
+    <None Remove="TestFiles\infinitedreams\demo.o" />
+    <None Remove="TestFiles\infinitedreams\demo.zx0" />
+    <None Remove="TestFiles\infinitedreams\disk.json" />
+    <None Remove="TestFiles\infinitedreams\eattheballbearing.zx0" />
+    <None Remove="TestFiles\infinitedreams\flight.zx0" />
+    <None Remove="TestFiles\infinitedreams\float.zx0" />
+    <None Remove="TestFiles\infinitedreams\jarresque.zx0" />
+    <None Remove="TestFiles\infinitedreams\loveyourmoney.zx0" />
+    <None Remove="TestFiles\infinitedreams\mentalobstacle.zx0" />
+    <None Remove="TestFiles\infinitedreams\naturalreality.zx0" />
+    <None Remove="TestFiles\infinitedreams\nevertomuch.zx0" />
+    <None Remove="TestFiles\infinitedreams\obliterationfin.zx0" />
+    <None Remove="TestFiles\infinitedreams\retouche.zx0" />
+    <None Remove="TestFiles\infinitedreams\shaft.zx0" />
+    <None Remove="TestFiles\infinitedreams\skyriders.zx0" />
+    <None Remove="TestFiles\infinitedreams\soundofsilence.zx0" />
+    <None Remove="TestFiles\infinitedreams\stratosphericcity.zx0" />
+    <None Remove="TestFiles\infinitedreams\summerinsweden.zx0" />
+    <None Remove="TestFiles\infinitedreams\techwar.zx0" />
+    <None Remove="TestFiles\infinitedreams\thefly.zx0" />
+    <None Remove="TestFiles\infinitedreams\thisisnotaravesong.zx0" />
+    <None Remove="TestFiles\infinitedreams\titlepic.zx0" />
+    <None Remove="TestFiles\infinitedreams\zerogravity.zx0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +65,93 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestFiles\Disk1\titlepic.raw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\bladerunner.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\bootblock.o">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\breakthrough.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\bright.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\cosmichowmuch.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\demo.o">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\demo.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\demo.zx0.old3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\disk.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\eattheballbearing.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\flight.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\float.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\jarresque.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\loveyourmoney.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\mentalobstacle.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\naturalreality.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\nevertomuch.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\obliterationfin.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\retouche.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\shaft.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\skyriders.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\soundofsilence.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\stratosphericcity.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\summerinsweden.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\techwar.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\thefly.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\thisisnotaravesong.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\titlepic.zx0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\zerogravity.zx0">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

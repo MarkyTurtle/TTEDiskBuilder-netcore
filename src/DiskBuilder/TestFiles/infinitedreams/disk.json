@@ -1,0 +1,133 @@
+{
+  "bootBlock": {
+    "FileName": "bootblock.o"
+  },
+  "diskNumber": 1,
+  "diskItems": [
+    {
+      "fileName": "summerinsweden.zx0",
+      "fileid": "summ",
+      "cacheable": false
+    },
+    {
+      "fileName": "bright.zx0",
+      "fileid": "brig",
+      "cacheable": false
+    },
+    {
+      "fileName": "cosmichowmuch.zx0",
+      "fileid": "cosm",
+      "cacheable": false
+    },
+    {
+      "fileName": "naturalreality.zx0",
+      "fileid": "natu",
+      "cacheable": false
+    },
+    {
+      "fileName": "obliterationfin.zx0",
+      "fileid": "obli",
+      "cacheable": false
+    },
+    {
+      "fileName": "mentalobstacle.zx0",
+      "fileid": "ment",
+      "cacheable": false
+    },
+    {
+      "fileName": "nevertomuch.zx0",
+      "fileid": "neve",
+      "cacheable": false
+    },
+    {
+      "fileName": "breakthrough.zx0",
+      "fileid": "brea",
+      "cacheable": false
+    },
+    {
+      "fileName": "zerogravity.zx0",
+      "fileid": "zero",
+      "cacheable": false
+    },
+    {
+      "fileName": "thisisnotaravesong.zx0",
+      "fileid": "this",
+      "cacheable": false
+    },
+    {
+      "fileName": "jarresque.zx0",
+      "fileid": "jarr",
+      "cacheable": false
+    },
+    {
+      "fileName": "retouche.zx0",
+      "fileid": "reto",
+      "cacheable": false
+    },
+    {
+      "fileName": "techwar.zx0",
+      "fileid": "tech",
+      "cacheable": false
+    },
+    {
+      "fileName": "loveyourmoney.zx0",
+      "fileid": "love",
+      "cacheable": false
+    },
+    {
+      "fileName": "bladerunner.zx0",
+      "fileid": "blad",
+      "cacheable": false
+    },
+    {
+      "fileName": "shaft.zx0",
+      "fileid": "shaf",
+      "cacheable": false
+    },
+    {
+      "fileName": "float.zx0",
+      "fileid": "floa",
+      "cacheable": false
+    },
+    {
+      "fileName": "eattheballbearing.zx0",
+      "fileid": "eatt",
+      "cacheable": false
+    },
+    {
+      "fileName": "thefly.zx0",
+      "fileid": "thef",
+      "cacheable": false
+    },
+    {
+      "fileName": "soundofsilence.zx0",
+      "fileid": "soun",
+      "cacheable": false
+    },
+    {
+      "fileName": "skyriders.zx0",
+      "fileid": "skyr",
+      "cacheable": false
+    },
+    {
+      "fileName": "flight.zx0",
+      "fileid": "flig",
+      "cacheable": false
+    },
+    {
+      "fileName": "stratosphericcity.zx0",
+      "fileid": "stra",
+      "cacheable": false
+    },
+    {
+      "fileName": "titlepic.zx0",
+      "fileid": "tpic",
+      "cacheable": false
+    },
+    {
+      "fileName": "demo.zx0",
+      "fileid": "demo",
+      "cacheable": false
+    }
+  ]
+}

@@ -3,6 +3,10 @@
     "CreateCommand Disk1": {
       "commandName": "Project",
       "commandLineArgs": "create --out testdisk.adf --path .\\TestFiles\\Disk1\\ --config disk.json"
+    },
+    "CreateCommand InfiniteDreams": {
+      "commandName": "Project",
+      "commandLineArgs": "create --out infinitedreams.adf --path .\\TestFiles\\infinitedreams\\ --config disk.json"
     }
   }
 }
