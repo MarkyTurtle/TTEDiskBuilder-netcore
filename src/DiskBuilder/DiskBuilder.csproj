@@ -73,6 +73,9 @@
     <Content Include="TestFiles\infinitedreams\bootblock.o">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestFiles\infinitedreams\bootblock.o.002">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestFiles\infinitedreams\bootblock.o.001">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
