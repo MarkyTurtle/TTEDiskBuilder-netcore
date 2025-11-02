@@ -20,8 +20,8 @@
     <None Remove="TestFiles\infinitedreams\Breakthrough.zx0" />
     <None Remove="TestFiles\infinitedreams\bright.zx0" />
     <None Remove="TestFiles\infinitedreams\cosmichowmuch.zx0" />
-    <None Remove="TestFiles\infinitedreams\demo.o" />
     <None Remove="TestFiles\infinitedreams\demo.zx0" />
+    <None Remove="TestFiles\infinitedreams\demo.zx0.old" />
     <None Remove="TestFiles\infinitedreams\disk.json" />
     <None Remove="TestFiles\infinitedreams\eattheballbearing.zx0" />
     <None Remove="TestFiles\infinitedreams\flight.zx0" />
@@ -88,10 +88,19 @@
     <Content Include="TestFiles\infinitedreams\cosmichowmuch.zx0">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestFiles\infinitedreams\demo.o">
+    <Content Include="TestFiles\infinitedreams\demo.zx0">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestFiles\infinitedreams\demo.zx0">
+    <Content Include="TestFiles\infinitedreams\demo.zx0.old">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\demo.zx0.old6">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\demo.zx0.old5">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\infinitedreams\demo.zx0.old4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestFiles\infinitedreams\demo.zx0.old3">
