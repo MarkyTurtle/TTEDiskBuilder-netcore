@@ -84,9 +84,6 @@
     <Content Include="TestFiles\infinitedreams\demo.zx0">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestFiles\infinitedreams\demo.zx0.001">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="TestFiles\infinitedreams\disk.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
